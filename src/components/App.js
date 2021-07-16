@@ -19,7 +19,7 @@ function App(props) {
         </html>
       `)
 
-    }, 250)
+    }, 200)
 
     return () => clearTimeout(timeout)
   }, [props])

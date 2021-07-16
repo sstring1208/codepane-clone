@@ -6,11 +6,13 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import TreeItem from '@material-ui/lab/TreeItem';
 import App from './App';
 
+
+
 const useStyles = makeStyles({
   root: {
     height: 240,
     flexGrow: 1,
-    maxWidth: 400,
+    maxWidth: 200,
   },
 });
 
@@ -52,6 +54,7 @@ export default function FileSystemNavigator() {
   {
     
     setEditor(prevState=>{
+       // eslint-disable-next-line array-callback-return
        prevState.map(editor=>{
            console.log(prevState);
            console.log(value);
@@ -74,12 +77,12 @@ export default function FileSystemNavigator() {
 
     
       <>
-    <TreeView
+    <TreeView 
       className={classes.root}
       defaultCollapseIcon={<ExpandMoreIcon />}
       defaultExpandIcon={<ChevronRightIcon />}
     >
-      <TreeItem nodeId="1" label="Applications">
+      <TreeItem nodeId="1" label="FileExplorer">
         <TreeItem onClick={(e)=>chooseEditor(e.target)} nodeId="2" label="index.html" />
         <TreeItem onClick={(e)=>chooseEditor(e.target)} nodeId="3" label="index.css" />
         <TreeItem onClick={(e)=>chooseEditor(e.target)} nodeId="4" label="index.js" />
@@ -90,7 +93,8 @@ export default function FileSystemNavigator() {
       <App
       editor={editor}
       onChange={onChange}
-      selectededitor={selectededitor}/> 
+      selectededitor={selectededitor}
+      /> 
 
 </>
       
